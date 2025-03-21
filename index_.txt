@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Acceso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="fenixomega.jpg" alt="Fénix Omega" />
+    </div>
+    <audio id="audio" src="omega.wav" autoplay loop></audio>
+    
+ 
+       <center> <p>INGRESE CÓDIGO DESACTIVACION:</p>
+        <input type="password" id="password" placeholder="CÓDIGO" oninput="displayPassword()">
+        <button onclick="checkPassword()">AUTORIZAR</button>
+        <div id="error-message">******</div>
+        <div id="password-display"></div>
+    </div></center>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value.toUpperCase();
+            
+            // Código especial para abrir proyecto_fenix.html
+            if (password === "MNX-09-REV") {
+                window.location.href = "final.html";
+                return; // Termina la función si el código es correcto
+            }
+
+
+            // Si no coincide ningún código
+            document.getElementById("error-message").style.display = "block";
+        }
+
+        function displayPassword() {
+            const password = document.getElementById("password").value.toUpperCase();
+            document.getElementById("password-display").textContent = "CÓDIGO INGRESADO: " + password;
+        }
+    </script>
+</body>
+</html>
